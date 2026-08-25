@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SolveSync (v0.1 — LeetCode MVP)
 
 A browser extension that detects your accepted LeetCode submissions and
@@ -123,3 +124,7 @@ The GitHub token is stored unencrypted in `chrome.storage.local`. That's
 fine for a personal-use MVP but isn't something you'd ship to other
 users — a real "v2" would move auth to a small backend doing GitHub
 OAuth, so users never handle a raw PAT.
+=======
+# SolveSync
+building it from scratch
+>>>>>>> 4ec9537c3c59ccd9225d346b41b0a009cfb0e09f
