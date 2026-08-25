@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "SolveSync",
+  "version": "0.1.0",
+  "description": "Automatically captures your accepted LeetCode solutions and commits them to a structured GitHub repo.",
+  "permissions": ["storage", "activeTab", "scripting", "notifications"],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://www.geeksforgeeks.org/*",
+    "https://api.github.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/problems/*"],
+      "js": ["lib/language-map.js", "content-scripts/leetcode.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.geeksforgeeks.org/problems/*"],
+      "js": ["lib/language-map.js", "content-scripts/gfg.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "SolveSync"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content-scripts/page-hook.js",
+        "content-scripts/page-hook-gfg.js"
+      ],
+      "matches": [
+        "https://leetcode.com/*",
+        "https://www.geeksforgeeks.org/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

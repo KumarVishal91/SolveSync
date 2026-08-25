@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>SolveSync</h1>
+    <span id="status-dot" class="dot"></span>
+  </header>
+
+  <section id="settings">
+    <label>GitHub Token
+      <input type="password" id="githubToken" placeholder="ghp_..." />
+    </label>
+    <label>Repo Owner
+      <input type="text" id="repoOwner" placeholder="your-username" />
+    </label>
+    <label>Repo Name
+      <input type="text" id="repoName" placeholder="leetcode-solutions" />
+    </label>
+    <label>Branch
+      <input type="text" id="branch" placeholder="main" />
+    </label>
+
+    <div class="row">
+      <button id="testBtn">Test Connection</button>
+      <button id="saveBtn" class="primary">Save</button>
+    </div>
+    <p id="testResult"></p>
+  </section>
+
+  <section id="history">
+    <h2>Recent Syncs</h2>
+    <ul id="historyList"><li class="empty">No syncs yet.</li></ul>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
